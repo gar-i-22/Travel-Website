@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            .header{
+                background-color: linen;
+                width: 100%; 
+            }
+            .center{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                transition: transform 0.5s;
+            }
+            .center:hover{
+                transform: scale(2,2);
+            }
+            .navbar{
+                width: 100%;
+                background-color: #555;
+                overflow: auto;
+            }
+
+            .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+            .navbar a:hover {
+            background-color: #000;
+            }
+
+            .active {
+            background-color: #04AA6D;
+            }
+            body{
+                background-color: lightblue;
+                margin:0px;
+            }
+            .heading{
+                text-align: center;
+            }
+            #faq-list{
+                list-style:none;
+                margin:0 auto;
+                padding:0;
+            }
+            .faq-item{
+                position:relative;
+                margin:10px;
+                padding:10px;
+                border-bottom:1px solid;
+            }
+            .faq-item span{
+                position:absolute;
+                top:0;
+                right:5px;
+                font-size:50px;
+            }
+            .answer{
+                display:none;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com"></script>
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            $(function(){
+                $('.faq-item').click(function(){
+                    var $answer = $(this).find('.answer');
+                    if($answer.hasClass('open')) { 
+                        $answer.removeClass('open');
+                        $answer.slideUp();
+                        $(this).find("span").text("+");
+                    } else {
+                        $answer.addClass('open'); 
+                        $answer.slideDown();
+                        $(this).find("span").text("-");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <img src="travel_logo.jpg" height="50" width="50" class="center">
+            <div class="navbar">
+                <a class="active" href="test-1.html">🏠Home</a> 
+                <a href="#content">✈Places to Visit</a> 
+                <a href="#Places">🏨Hotels</a>
+                <a href="Contacts.html">📱Contact Us</a>
+                <a href="FAQ.html">❓FAQ</a>
+              </div>              
+        </div>
+        <div class="heading">
+            <h1>FAQ</h1>
+        </div>
+        <div class="faq">
+            <ul id="faq-list">
+                <li class="faq-item">
+                    <h2 class="question">What is your name?</h2>
+                    <span>+</span>
+                    <div class="answer">
+                        <p>My name is Aditya Kalisetty</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <h2 class="question">What is your name?</h2>
+                    <span>+</span>
+                    <div class="answer">
+                        <p>My name is Aditya Kalisetty</p>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <h2 class="question">What is your name?</h2>
+                    <span>+</span>
+                    <div class="answer">
+                        <p>My name is Aditya Kalisetty</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
